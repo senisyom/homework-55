@@ -15,6 +15,8 @@ const App = () => {
     count: number;
   }
 
+  const [totalPrice, setTotalPrice] = useState(0);
+
   const INGREDIENTS: Iingredient[] = [
     { name: "Meat", price: 80, image: burgerMeat, deleteImage: deleteButton },
     {
@@ -35,22 +37,29 @@ const App = () => {
   );
 
   const addIngredient = (name: string) => {
-    setOrders((prevOrders) =>
-      prevOrders.map((item) =>
+    setOrders((prevOrders) => {
+      const newPrice = prevOrders.map((item) =>
         item.name === name ? { ...item, count: item.count + 1 } : item
-      )
-    );
+      );
+
+      const ingredient = INGREDIENTS.find((item) => item.name === name);
+      if (ingredient) {
+        setTotalPrice((prevTotal) => prevTotal + ingredient.price);
+      }
+
+      return newPrice;
+    });
   };
 
   return (
     <div className="Container">
-      <div>Ingredients</div>
       <div className="left-bar">
+        <div className="ingredient-top">Ingredients</div>
         <Ingredient ingredients={INGREDIENTS} addIngredient={addIngredient} />
       </div>
-      <div>Burger</div>
       <div className="right-bar">
-        <Burger ingredients={INGREDIENTS} />
+        <div className="burger-top">Burger</div>
+        <Burger ingredients={INGREDIENTS} totalPrice={totalPrice} />
       </div>
     </div>
   );

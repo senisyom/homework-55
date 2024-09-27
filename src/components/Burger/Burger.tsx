@@ -2,7 +2,11 @@ import React from "react";
 import "./Burger.css"
 
 
-const Burger: React.FC = () => {
+interface BurgerProps {
+  totalPrice: number;
+}
+
+const Burger: React.FC <BurgerProps>= ({ totalPrice}) => {
     return (
       <div className="Burger">
         <div className="BreadTop">
@@ -13,6 +17,7 @@ const Burger: React.FC = () => {
         <div className="Cheese"></div>
         <div className="Meat"></div>
         <div className="BreadBottom"></div>
+        <div className="total">Price: {totalPrice}</div>
       </div>
     );
 }

@@ -112,19 +112,21 @@
 }
 
 .Burger {
-    margin-top: 80px;
-    width: 80%;
+    margin-top: 8px;
+    width: 50%;
     margin: auto;
-    height: 400px;
-    overflow: auto;
-    text-align: center;
+    height: 200px;
     font-weight: bold;
     font-size: 1.2rem;
 }
 
-@media (min-width: 1000px) and (min-height: 700px) {
+@media (min-width: 440px) and (min-height: 440px) {
     .Burger {
-        width: 700px;
-        height: 600px;
+        width: 440px;
+        height: 440px;
     }
+}
+
+.total {
+    margin: 0px 0px 20px 180px;
 }
