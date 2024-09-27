@@ -1,7 +1,8 @@
 import React from "react";
+import "./Burger.css"
 
 
-const Burger = () => {
+const Burger: React.FC = () => {
     return (
       <div className="Burger">
         <div className="BreadTop">

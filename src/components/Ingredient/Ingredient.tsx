@@ -12,13 +12,15 @@ interface IngredientsProps {
 
 const Ingredient: React.FC<IngredientsProps> = ({ ingredients, addIngredient }) => {
   return (
-    <div>
+    <div className="food-list">
       {ingredients.map((ingredient) => (
         <Food
           key={ingredient.name}
           name={ingredient.name}
           img={ingredient.image}
           addIngredient={() => addIngredient(ingredient.name)}
+          deleteImg={ingredient.deleteImage}
+          count={0}
         />
       ))}
     </div>

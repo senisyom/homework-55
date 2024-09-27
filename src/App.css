@@ -112,9 +112,10 @@
 }
 
 .Burger {
-  width: 100%;
-  margin: auto;
-  height: 250px;
+  width: 60%;
+  margin-top: 50px;
+  margin-left: 120px;
+  height: 350px;
   overflow: auto;
   text-align: center;
   font-weight: bold;
@@ -127,3 +128,82 @@
     height: 600px;
   }
 }
+
+
+.Container {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin-top: 20px;
+  border-style: solid;
+  padding: 46px;
+}
+
+.left-bar {
+  background-color: #fff;
+  border-style: solid;
+  height: 400px;
+  width: 600px;
+}
+
+.right-bar {
+  background-color: #fff;
+  border-style: solid;
+  height: 400px;
+  width: 600px;
+}
+
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.food {
+  background-color: #fff;
+  padding: 10px;
+  width: 120px;
+  text-align: center;
+}
+
+.food button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.food-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.food-name {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.count {
+  margin-top: 5px;
+  color: #555;
+}
+
+.delete-button {
+  margin-top: 5px;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.delete-button img {
+  width: 16px;
+  height: 16px;
+}
+
+
