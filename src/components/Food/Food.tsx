@@ -15,6 +15,7 @@ const Food: React.FC<FoodProps> = ({
  }) => {
   return (
     <div className="food">
+      
       <button onClick={addIngredient}>
         <img src={img} alt={name} className="food-img" />
       </button>

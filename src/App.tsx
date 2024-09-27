@@ -9,7 +9,6 @@ import Ingredient from "./components/Ingredient/Ingredient";
 import Burger from "./components/Burger/Burger";
 import { Iingredient } from "./types";
 
-
 const App = () => {
   interface FoodItem {
     name: string;
@@ -45,10 +44,11 @@ const App = () => {
 
   return (
     <div className="Container">
+      <div>Ingredients</div>
       <div className="left-bar">
         <Ingredient ingredients={INGREDIENTS} addIngredient={addIngredient} />
       </div>
-
+      <div>Burger</div>
       <div className="right-bar">
         <Burger ingredients={INGREDIENTS} />
       </div>
