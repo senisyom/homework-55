@@ -4,12 +4,14 @@ interface FoodProps {
   deleteImg: string;
   count: number;
   addIngredient: () => void;
+  deleteIngredient: () => void;
 }
 
 const Food: React.FC<FoodProps> = ({
   name,
   img,
   addIngredient,
+  deleteIngredient,
   count,
   deleteImg,
  }) => {
@@ -21,7 +23,7 @@ const Food: React.FC<FoodProps> = ({
       </button>
       <div className="food-name">{name}</div>
       <div className="count">X {count} </div>
-      <button className="delete-button">
+      <button onClick={deleteIngredient} className="delete-button">
               <img src={deleteImg} alt="Delete" />
       </button>
     </div>

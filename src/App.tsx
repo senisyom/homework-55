@@ -47,8 +47,21 @@ const App = () => {
         setTotalPrice((prevTotal) => prevTotal + ingredient.price);
       }
 
-
       return newPrice;
+    });
+  };
+
+  const deleteIngredient = (name: string) => {
+    setOrders((prevOrders) => {
+      const newCount = prevOrders.reduce((acc, item) => {
+        if (item.name === name && item.count > 0) {
+          acc.push({ ...item, count: item.count - 1 });
+        } else {
+          acc.push(item);
+        }
+        return acc;
+      }, [] as FoodItem []);
+      return newCount;
     });
   };
 
@@ -56,11 +69,20 @@ const App = () => {
     <div className="Container">
       <div className="left-bar">
         <div className="ingredient-top">Ingredients</div>
-        <Ingredient ingredients={INGREDIENTS} addIngredient={addIngredient} orders={ orders} />
+        <Ingredient
+          ingredients={INGREDIENTS}
+          addIngredient={addIngredient}
+          orders={orders}
+          deleteIngredient={deleteIngredient}
+        />
       </div>
       <div className="right-bar">
         <div className="burger-top">Burger</div>
-        <Burger orders={orders } ingredients={INGREDIENTS} totalPrice={totalPrice} />
+        <Burger
+          orders={orders}
+          ingredients={INGREDIENTS}
+          totalPrice={totalPrice}
+        />
       </div>
     </div>
   );

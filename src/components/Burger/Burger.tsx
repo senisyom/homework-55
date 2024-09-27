@@ -3,8 +3,6 @@ import "./Burger.css"
 import { BurgerProps } from "../../types";
 
 
-
-
 const Burger: React.FC <BurgerProps>= ({ totalPrice}) => {
     return (
       <div className="Burger">
