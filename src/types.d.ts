@@ -10,3 +10,9 @@ export interface FoodItem {
   name: string;
   count: number;
 }
+
+export interface BurgerProps {
+  orders: FoodItem[];
+  ingredients: Iingredient[];
+  totalPrice: number;
+}

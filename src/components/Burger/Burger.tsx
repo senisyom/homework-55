@@ -1,10 +1,9 @@
 import React from "react";
 import "./Burger.css"
+import { BurgerProps } from "../../types";
 
 
-interface BurgerProps {
-  totalPrice: number;
-}
+
 
 const Burger: React.FC <BurgerProps>= ({ totalPrice}) => {
     return (

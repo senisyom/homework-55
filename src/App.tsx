@@ -47,6 +47,7 @@ const App = () => {
         setTotalPrice((prevTotal) => prevTotal + ingredient.price);
       }
 
+
       return newPrice;
     });
   };
@@ -55,11 +56,11 @@ const App = () => {
     <div className="Container">
       <div className="left-bar">
         <div className="ingredient-top">Ingredients</div>
-        <Ingredient ingredients={INGREDIENTS} addIngredient={addIngredient} />
+        <Ingredient ingredients={INGREDIENTS} addIngredient={addIngredient} orders={ orders} />
       </div>
       <div className="right-bar">
         <div className="burger-top">Burger</div>
-        <Burger ingredients={INGREDIENTS} totalPrice={totalPrice} />
+        <Burger orders={orders } ingredients={INGREDIENTS} totalPrice={totalPrice} />
       </div>
     </div>
   );
